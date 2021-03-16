@@ -1,0 +1,22 @@
+﻿@model WaklingTech.Mvvm.ViewModel.CustomerVMs.CustomerListVM
+@inject IStringLocalizer<Program> Localizer;
+
+
+<wt:treecontainer items="AllAreas" id-field="Searcher.buildingId" height="500">
+    <wt:searchpanel vm="@Model" reset-btn="true">
+        <wt:row items-per-row="ItemsPerRowEnum.Three">
+            <wt:textbox field="Searcher.CardNum" />
+            <wt:combobox field="Searcher.StationId" items="Searcher.AllStations" empty-text="@Localizer["Sys.All"]" />
+            <wt:combobox field="Searcher.AreaId" items="Searcher.AllAreas" empty-text="@Localizer["Sys.All"]" />
+            <wt:combobox field="Searcher.communityId" items="Searcher.Allcommunitys" empty-text="@Localizer["Sys.All"]" />
+            <wt:combobox field="Searcher.buildingId" items="Searcher.Allbuildings" empty-text="@Localizer["Sys.All"]" />
+            <wt:textbox field="Searcher.Unit" />
+            <wt:textbox field="Searcher.Room" />
+            <wt:textbox field="Searcher.CustomerName" />
+            <wt:textbox field="Searcher.IDCard" />
+            <wt:textbox field="Searcher.BuildingArea" />
+            <wt:textbox field="Searcher.HeatingArea" />
+        </wt:row>
+    </wt:searchpanel>
+    <wt:grid vm="@Model" url="/Customer/Search" />
+    </wt:treecontainer>

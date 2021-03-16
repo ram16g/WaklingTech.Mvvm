@@ -1,0 +1,23 @@
+﻿@model WaklingTech.Mvvm.ViewModel.CustomerVMs.CustomerVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:textbox field="Entity.CardNum" />
+<wt:combobox field="Entity.StationId" items="AllStations"/>
+<wt:combobox field="Entity.AreaId" items="AllAreas"/>
+<wt:combobox field="Entity.communityId" items="Allcommunitys"/>
+<wt:combobox field="Entity.buildingId" items="Allbuildings"/>
+<wt:textbox field="Entity.Unit" />
+<wt:textbox field="Entity.Room" />
+<wt:textbox field="Entity.CustomerName" />
+<wt:textbox field="Entity.IDCard" />
+<wt:textbox field="Entity.BuildingArea" />
+<wt:textbox field="Entity.HeatingArea" />
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

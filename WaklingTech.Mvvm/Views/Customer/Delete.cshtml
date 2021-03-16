@@ -1,0 +1,24 @@
+﻿@model WaklingTech.Mvvm.ViewModel.CustomerVMs.CustomerVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+	<wt:quote>@Localizer["Sys.DeleteConfirm"]</wt:quote>
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:display field="Entity.CardNum" />
+<wt:display field="Entity.Station.Name" />
+<wt:display field="Entity.Area.Name" />
+<wt:display field="Entity.community.Name" />
+<wt:display field="Entity.building.Name" />
+<wt:display field="Entity.Unit" />
+<wt:display field="Entity.Room" />
+<wt:display field="Entity.CustomerName" />
+<wt:display field="Entity.IDCard" />
+<wt:display field="Entity.BuildingArea" />
+<wt:display field="Entity.HeatingArea" />
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton theme=" ButtonThemeEnum.Warm" text="@Localizer["Sys.Delete"]"/>
+        <wt:closebutton />
+    </wt:row>
+</wt:form>
