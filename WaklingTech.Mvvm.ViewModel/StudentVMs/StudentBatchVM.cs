@@ -26,8 +26,8 @@ namespace WaklingTech.Mvvm.ViewModel.StudentVMs
             {
                 Student student = Wtm.DC.Set<Student>().Where(s => s.ID.ToString() == id).FirstOrDefault();
                 student.Age +=LinkedVM.Age;
-                DC.SaveChanges();
             }
+            DC.SaveChanges();
             return true;
             
             //return base.DoBatchEdit();
